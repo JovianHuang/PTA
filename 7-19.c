@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
 
 	// Declare two arrays that stores the number of days in each month
 	int arrMonth_inLeap[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	int arrMonth_inAvg[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int arrMonth_inFrac[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	// Call LeapOrNot to judge how many days in Feb
 	if (LeapOrNot(year) == 1)
@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
 	{
 		i = 0;
 		for (i; i < month - 1; i++)
-			days = days + arrMonth_inAvg[i];
+			days = days + arrMonth_inFrac[i];
 		days = days + day;
 	}
 
