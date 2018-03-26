@@ -28,11 +28,11 @@ int main(int argc, char const *argv[])
 	scanf("%f%f%f%f\n", &a3, &a2, &a1, &a0);
 	scanf("%f%f", &a, &b);
 
-	printf("a3 = %f\n", a3);
-	printf("a2 = %f\n", a2);
-	printf("a1 = %f\n", a1);
-	printf("a0 = %f\n", a0);
-	printf("a= %f, b = %f\n", a, b);
+	// printf("a3 = %f\n", a3);
+	// printf("a2 = %f\n", a2);
+	// printf("a1 = %f\n", a1);
+	// printf("a0 = %f\n", a0);
+	// printf("a= %f, b = %f\n", a, b);
 
 	while (fabs(a-b) > 1e-6)
 	{
@@ -41,10 +41,10 @@ int main(int argc, char const *argv[])
 		float f_b = func(a3, a2, a1, a0, b);
 		float midpoint_value = func(a3, a2, a1, a0, midpoint);
 
-		printf("midpoint = %f\n", midpoint);
-		printf("f_a = %f\n", f_a);
-		printf("f_b = %f\n", f_b);
-		printf("midpoint_value = %f\n", midpoint_value);
+		// printf("midpoint = %f\n", midpoint);
+		// printf("f_a = %f\n", f_a);
+		// printf("f_b = %f\n", f_b);
+		// printf("midpoint_value = %f\n", midpoint_value);
 
 		if (f_a * f_b < 0)
 		{

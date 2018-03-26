@@ -15,9 +15,7 @@
 int LeapOrNot(int year)
 {
 	int i;
-	if (year % 4 == 0 && year % 100 != 0)
-		i = 1;
-	else if (year % 400 == 0)
+	if ((!(year%4)) && year% 100 || !(year%400))
 		i = 1;
 	else
 		i = 0;
@@ -36,7 +34,7 @@ int main(int argc, char const *argv[])
 	int arrMonth_inFrac[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	// Call LeapOrNot to judge how many days in Feb
-	if (LeapOrNot(year) == 1)
+	if (LeapOrNot(year))
 	{
 		i = 0;
 		/* 	This initialization is necessary, or change
