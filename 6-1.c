@@ -5,7 +5,7 @@
 * @Description:	A question which numbered 6-1 in PTA. This question requires
 				that the program be written to judging the prime number, and
 				calculating the sum of primes in a given interval
-* @Version:		0.2.0.180323_base
+* @Version:		1.0.0.180330_alpha
 * =========================================================================== *
 */
 #include <stdio.h>
@@ -13,18 +13,21 @@
 
 int prime(int p)
 {
-	int flag = 0;
-
-	for (int i = 2; i <= sqrt(p); i++)
+	if (p <= 1)
 	{
-		if (p % i)
+		return 0;
+	}
+
+	int bound = (int)sqrt(p) + 1;
+	for (int i = 2; i < bound; i++)
+	{
+		if (!(p % i))
 		{
-			flag = 1;
-			break;
+			return 0;
 		}
 	}
 
-	return flag;
+	return 1;
 }
 
 int PrimeSum(int m, int n)
