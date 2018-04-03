@@ -20,39 +20,28 @@ int main(int argc, char const *argv[])
 {
 	double a3, a2, a1, a0;	// Coefficients of polynomial
 	double a, b;	// Interval endpoints
-	double root, midpoint, f_a, f_b, midpoint_value;
-	scanf("%lf%lf%lf%lf\n", &a3, &a2, &a1, &a0);
+	double root, mid, f_a, f_b, mid_value;
+	scanf("%lf%lf%lf%lf", &a3, &a2, &a1, &a0);
 	scanf("%lf%lf", &a, &b);
-
-	// printf("a3 = %lf\n", a3);
-	// printf("a2 = %lf\n", a2);
-	// printf("a1 = %lf\n", a1);
-	// printf("a0 = %lf\n", a0);
-	// printf("a= %lf, b = %lf\n", a, b);
-
+	
 	while (fabs(a-b) > 1e-6)
 	{
-		midpoint = (a + b) / 2;
+		mid = (a + b) / 2;
 		f_a = func(a3, a2, a1, a0, a);
 		f_b = func(a3, a2, a1, a0, b);
-		midpoint_value = func(a3, a2, a1, a0, midpoint);
-
-		// printf("midpoint = %lf\n", midpoint);
-		// printf("f_a = %lf\n", f_a);
-		// printf("f_b = %lf\n", f_b);
-		// printf("midpoint_value = %lf\n", midpoint_value);
+		mid_value = func(a3, a2, a1, a0, mid);
 
 		if (f_a * f_b < 0)
 		{
-			if (fabs(midpoint_value-0) < 1e-4)
+			if (fabs(mid_value-0) < 1e-4)
 			{
-				root = midpoint;
+				root = mid;
 				break;
 			}
-			else if (midpoint_value * f_a > 0)
-				a = midpoint;
+			else if (mid_value * f_a > 0)
+				a = mid;
 			else
-				b = midpoint;
+				b = mid;
 		}
 	}
 
