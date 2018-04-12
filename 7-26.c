@@ -6,10 +6,11 @@
 				that the program be written to find the greatest
 				common divisor and least common multiple of two
 				given positive integers
-* @Version:		1.0.0.180319_beta
+* @Version:		2.1.0.180412_beta
 * =========================================================================== *
 */
 #include <stdio.h>
+int GCD(int, int);
 
 int main(int argc, char const *argv[])
 {
@@ -18,28 +19,24 @@ int main(int argc, char const *argv[])
 
 	// Variable: gcd for greast common dividor, lcm for least common multilpe
 	int gcd = 0, lcm = 0;
-	// To find the gcd with Euclidean Algorithm
-	if (m < n)
-	{
-		int temp;
-		temp = n;
-		n = m;
-		m = temp;
-	}
-	int temp_m = m, temp_n = n;
-	int remainder;
-	while (temp_n != 0)
-	{
-		remainder = temp_m % temp_n;
-		temp_m = temp_n;
-		temp_n = remainder;
-	}
-	gcd = temp_m;
 
-	// To find the lcm
+	gcd = GCD(m, n);
 	lcm = m * n / gcd;
 
 	printf("%d %d", gcd, lcm);
 
 	return 0;
+}
+
+int GCD(int m, int n)
+{
+	int remainder, i;
+
+	while (n != 0)
+	{
+		remainder = m % n;
+		m = n;
+		n = remainder;
+	}
+	return m;
 }

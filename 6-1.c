@@ -14,17 +14,13 @@
 int prime(int p)
 {
 	if (p <= 1)
-	{
 		return 0;
-	}
 
 	int bound = (int)sqrt(p) + 1;
 	for (int i = 2; i < bound; i++)
 	{
 		if (!(p % i))
-		{
 			return 0;
-		}
 	}
 
 	return 1;
