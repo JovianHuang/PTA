@@ -4,7 +4,7 @@
 * @Filename:	7-61.c
 * @Description:	A question which numbered 7-61 in PTA. This question requires
 				that the program be written to balabala
-* @Version:		1.0.0.180421_alpha
+* @Version:		1.2.0.180504_alpha
 * =========================================================================== *
 */
 #include <stdio.h>
@@ -25,10 +25,10 @@ int main(int argc, char const *argv[])
 	for (index = 0; index < strsNum; index++)
 	{
 		scanf("%s", &strings[index]);
-		
+
 		if (!(index))
 			continue;
-		else if(strcmp(strings[longestStrIndex], strings[index]) < 0)
+		else if( strlen(strings[index]) > strlen(strings[longestStrIndex]) )
 			longestStrIndex = index;
 	}
 

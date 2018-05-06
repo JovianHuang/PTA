@@ -5,26 +5,26 @@
 * @Description:	A question which numbered 7-56 in PTA. This question requires
 				that the program be written to search the saddle point in the
 				matrix
-* @Version:		2.5.9.180420_alpha
+* @Version:		2.5.10.180504_alpha
 * =========================================================================== *
 */
 #include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
-	
+
 	int lim;
 	scanf("%d", &lim);
 	int arrMatrix[lim][lim];	// Array of Matrix
 
-	for (int i = 0; i < lim; i++)	
+	for (int i = 0; i < lim; i++)
 	{	// Get Data
 		for (int j = 0; j < lim; j++)
 			scanf("%d", &arrMatrix[i][j]);
 	}
 
 	int indexMax[lim], indexMin[lim];
-	/*	These 2 arrays are to store the Indexcripts of the max in each rows or 
+	/*	These 2 arrays are to store the Index of the max in each rows or
 		of the min in each columns.	*/
 
 	for (int i = 0; i < lim; i++)
@@ -37,13 +37,13 @@ int main(int argc, char const *argv[])
 		for (int j = 0; j < lim; j++)
 		{	/* 	Search the max in each rows and the min in each columns at the
 				same time.	*/
-			if (arrMatrix[i][j] > max)
+			if (arrMatrix[i][j] >= max)	// In case that will be an other max
 			{
 				max = arrMatrix[i][j];
 				temp_indexMax = j;
 			}
 
-			if (arrMatrix[j][i] < min)
+			if (arrMatrix[j][i] <= min)
 			{
 				min = arrMatrix[j][i];
 				temp_indexMin = j;

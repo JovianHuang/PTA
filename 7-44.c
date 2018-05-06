@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 {
 	int num;
 	scanf("%d", &num);
-	int arrNum[3];	// Store number of the num 
+	int arrNum[3];	// Store number of the num
 	int arrReNum[2]; // Store rearrange numbers into it, 0 for max and 1 for min
 
 	for (int i = 1; ; i++)
@@ -79,7 +79,7 @@ void AscSelectionSort(int arrNum[])
 		}
 		if (min != i)
 			Swap(arrNum, min, i);
-	}	
+	}
 }
 
 void Swap(int arrNum[], int i, int j)

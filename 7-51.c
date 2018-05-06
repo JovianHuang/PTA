@@ -4,57 +4,57 @@
 * @Filename:	7-51.c
 * @Description:	A question which numbered 7-51 in PTA. This question requires
 				that the program be written to balabala
-* @Version:		1.2.2.180417_alpha
+* @Version:		1.2.9.180504_beta
 * =========================================================================== *
 */
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 
-int prime(int);
+_Bool prime(int);
 
 int main(int argc, char const *argv[])
 {
 	int n, k;
 	scanf("%d%d", &n, &k);
-	int iPrime[10];
+	int arrPrime[10];
 
-	int isum = 0, icounter = 0;
-	for (n; n > k; n--)
+	int sum = 0, counter = 0;
+	for (n; counter < k; n--)
 	{
 		if (prime(n))
 		{
-			iPrime[icounter] = n;
-			isum += n;
-			icounter++;
+			arrPrime[counter] = n;
+			sum += n;
+			counter++;
 		}
-		
-		if (!(icounter < 10))
+
+		if (!(counter < 10) || n < 2)
 			break;
 	}
 
-	for (int i = 0; i < icounter; i++)
+	for (int i = 0; i < counter; i++)
 	{
-		printf("%d", iPrime[i]);
-		if (i < icounter - 1)
+		printf("%d", arrPrime[i]);
+		if (i < counter - 1)
 			printf("+");
 	}
-	printf("=%d\n", isum);
+	printf("=%d\n", sum);
 
 	return 0;
 }
 
-int prime(int p)
+_Bool prime(int p)
 {
+	_Bool isPrime = true;
 	int bound = (int)sqrt(p) + 1;
-	
+
 	if (p <= 1)
-		return 0;
+		isPrime = false;
 
 	for (int i = 2; i < bound; i++)
-	{
 		if (!(p % i))
-			return 0;
-	}
+			isPrime = false;
 
-	return 1;
+	return isPrime;
 }
