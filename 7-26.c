@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
 
 int GCD(int m, int n)
 {
-	int remainder, i;
+	int remainder;
 
 	while (n != 0)
 	{
